@@ -1,6 +1,6 @@
 # time podman build -t workdir?? -f Containerfile ../quarkus/target
 
-FROM eclipse-temurin:21-jre-alpine
+FROM openjdk
 
 COPY quarkus-app/lib/boot/* /deployment/lib/
 COPY quarkus-app/lib/main/* /deployment/lib/

@@ -1,6 +1,9 @@
 # time podman build -t workdir?? -f Containerfile ../quarkus/target
 
-FROM eclipse-temurin:21-jre-alpine
+FROM debian/buildd:stable
+
+RUN apt-get update
+RUN apt -y install default-jdk ssh vim
 
 COPY quarkus-app/lib/boot/* /deployment/lib/
 COPY quarkus-app/lib/main/* /deployment/lib/

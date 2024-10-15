@@ -1,6 +1,9 @@
 # time podman build -t workdir?? -f Containerfile ../quarkus/target
 
-FROM eclipse-temurin:21-jre-alpine
+# o pilar principal da manutenção é sempre utilizar imagens oficiais
+# inves de usar debian e instalar o jdk, use a imagem ofocial do openjdk
+
+FROM openjdk
 
 COPY quarkus-app/lib/boot/* /deployment/lib/
 COPY quarkus-app/lib/main/* /deployment/lib/
